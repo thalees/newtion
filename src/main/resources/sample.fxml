@@ -8,6 +8,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftt.newtion.Controller">
    <children>
-      <Accordion layoutX="123.0" layoutY="105.0" />
+      <Button layoutX="236.0" layoutY="175.0" onAction="#sayHelloWorld" text="Say 'Hello World'" />
+      <Label fx:id="helloWorld" GridPane.rowIndex="1" />
    </children>
 </AnchorPane>

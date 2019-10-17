@@ -1,10 +1,14 @@
 package ftt.newtion;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import  javafx.scene.control.Label;
+
+import java.io.IOException;
 
 public class Main extends Application {
 
@@ -13,10 +17,9 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
-        Label label = new Label("Hello world");
-        Scene scene = new Scene(label);
-        primaryStage.setScene(scene);
+    public void start(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/sample.fxml"));
+        primaryStage.setScene(new Scene(root, 800, 500));
         primaryStage.show();
     }
 }
