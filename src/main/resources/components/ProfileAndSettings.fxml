@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-stylesheet ../styles/singIn.css?>
+
+<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="600.0" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="app.controllers.ProfileAndSettings">
+  <children>
+    <BorderPane maxHeight="1138.0" minHeight="400.0" prefHeight="597.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <bottom>
+        <FlowPane alignment="CENTER" prefHeight="60.0" prefWidth="600.0">
+          <children>
+            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#save" prefWidth="127.0" text="Save" />
+          </children>
+        </FlowPane>
+      </bottom>
+      <center>
+        <VBox prefHeight="200.0" prefWidth="100.0">
+          <children>
+            <FlowPane alignment="CENTER" prefHeight="56.0" prefWidth="491.0" style="-fx-background-color: #858585;">
+              <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="339.0" text="Profile &amp; Settings" textFill="WHITE">
+                  <font>
+                    <Font name="Century Gothic" size="24.0" />
+                  </font>
+                  <FlowPane.margin>
+                    <Insets fx:id="x2" />
+                  </FlowPane.margin>
+                </Label>
+              </children>
+            </FlowPane>
+            <TabPane prefHeight="482.0" prefWidth="600.0" side="TOP" style="" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                <Tab text="Bookmarks">
+                  <content>
+                    <ScrollPane pannable="false" prefHeight="200.0" prefWidth="200.0">
+                      <content>
+                        <BorderPane prefHeight="411.0" prefWidth="585.0">
+                          <center>
+                            <GridPane prefHeight="332.0">
+                              <children>
+                                <FlowPane columnHalignment="LEFT" prefHeight="200.0" prefWidth="200.0" rowValignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                  <children>
+                                    <Label prefWidth="339.0" text="Title 1">
+                                      <font>
+                                        <Font name="System Bold" size="14.0" fx:id="x6" />
+                                      </font>
+                                    </Label>
+                                    <Label prefHeight="91.0" prefWidth="339.0" text="Maecenas dapibus ullamcorper sem sed feugiat. Nulla facilisi. Nullam odio ex, commodo fringilla orci quis, pulvinar ultrices orci. Nullam nunc eros, iaculis a imperdiet a, finibus eu turpis. Etiam blandit purus ut dui iaculis tristique. Donec feugiat at tellus in varius. Aenean dapibus ligula at felis molestie ornare." wrapText="true">
+                                      <FlowPane.margin>
+                                        <Insets bottom="10.0" fx:id="x1" />
+                                      </FlowPane.margin>
+                                    </Label>
+                                  </children>
+                                </FlowPane>
+                                <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="0" />
+                                <FlowPane columnHalignment="LEFT" prefHeight="200.0" prefWidth="200.0" rowValignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                  <children>
+                                    <Label font="$x6" prefWidth="339.0" text="Title 2">
+                                      <FlowPane.margin>
+                                        <Insets top="10.0" />
+                                      </FlowPane.margin>
+                                    </Label>
+                                    <Label prefHeight="91.0" prefWidth="339.0" text="Vivamus luctus est diam, a suscipit felis tempor non. Maecenas suscipit et nibh non fringilla. Aliquam sed nisi malesuada, venenatis nulla ornare, efficitur urna. Integer varius non urna eget cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero id metus viverra semper ac quis felis." wrapText="true" FlowPane.margin="$x1" />
+                                  </children>
+                                  <padding>
+                                    <Insets bottom="10.0" top="10.0" />
+                                  </padding>
+                                </FlowPane>
+                                <FlowPane prefHeight="104.0" prefWidth="188.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                  <GridPane.margin>
+                                    <Insets bottom="5.0" />
+                                  </GridPane.margin>
+                                </FlowPane>
+                                <FlowPane columnHalignment="LEFT" prefHeight="200.0" prefWidth="200.0" rowValignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                  <children>
+                                    <Label font="$x6" prefWidth="339.0" text="Title 3">
+                                      <FlowPane.margin>
+                                        <Insets top="10.0" />
+                                      </FlowPane.margin>
+                                    </Label>
+                                    <Label prefHeight="91.0" prefWidth="339.0" text="Vivamus luctus est diam, a suscipit felis tempor non. Maecenas suscipit et nibh non fringilla. Aliquam sed nisi malesuada, venenatis nulla ornare, efficitur urna. Integer varius non urna eget cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero id metus viverra semper ac quis felis." wrapText="true">
+                                      <FlowPane.margin>
+                                        <Insets bottom="10.0" fx:id="x1" />
+                                      </FlowPane.margin>
+                                    </Label>
+                                  </children>
+                                  <padding>
+                                    <Insets bottom="10.0" top="10.0" />
+                                  </padding>
+                                </FlowPane>
+                                <FlowPane prefHeight="104.0" prefWidth="188.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              </children>
+                              <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="372.0" minWidth="10.0" prefWidth="337.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="388.0" minWidth="10.0" prefWidth="188.0" />
+                              </columnConstraints>
+                              <padding>
+                                <Insets left="30.0" right="30.0" />
+                              </padding>
+                              <rowConstraints>
+                                <RowConstraints maxHeight="133.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="151.0" minHeight="10.0" prefHeight="123.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="168.0" minHeight="10.0" prefHeight="119.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                            </GridPane>
+                          </center>
+                          <top>
+                            <Label alignment="CENTER" contentDisplay="LEFT" prefHeight="52.0" prefWidth="165.0" text="Bookmarks" textAlignment="CENTER" underline="false" BorderPane.alignment="CENTER">
+                              <font>
+                                <Font size="20.0" />
+                              </font>
+                            </Label>
+                          </top>
+                        </BorderPane>
+                      </content>
+                    </ScrollPane>
+                  </content>
+                </Tab>
+                <Tab text="Interests">
+                  <content>
+                    <HBox prefHeight="100.0" prefWidth="200.0">
+                      <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                          <children>
+                            <FlowPane alignment="CENTER_LEFT" maxWidth="-1.0" prefHeight="48.0" prefWidth="194.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Investment">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Travel" FlowPane.margin="$x3" />
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Technology">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Inovation">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="World">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Economy">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                          </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                          <children>
+                            <FlowPane alignment="CENTER_LEFT" maxWidth="-1.0" prefHeight="48.0" prefWidth="194.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Sport">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Science">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Politics">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Nature">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Pop">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Creativity">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                          </children>
+                        </VBox>
+                      </children>
+                    </HBox>
+                  </content>
+                </Tab>
+                <Tab text="Source Platforms">
+                  <content>
+                    <HBox prefHeight="100.0" prefWidth="200.0">
+                      <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                          <children>
+                            <FlowPane alignment="CENTER_LEFT" maxWidth="-1.0" prefHeight="48.0" prefWidth="194.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="BBC">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="G1">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Gazeta">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Medium">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Folha">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="StartSe">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                          </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                          <children>
+                            <FlowPane alignment="CENTER_LEFT" maxWidth="-1.0" prefHeight="48.0" prefWidth="194.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Abril">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Uol">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Exame">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Veja">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="R7">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                            <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0">
+                              <children>
+                                <CheckBox mnemonicParsing="false" prefHeight="21.000091552734375" text="Terra">
+                                  <FlowPane.margin>
+                                    <Insets left="50.0" fx:id="x3" />
+                                  </FlowPane.margin>
+                                </CheckBox>
+                              </children>
+                            </FlowPane>
+                          </children>
+                        </VBox>
+                      </children>
+                    </HBox>
+                  </content>
+                </Tab>
+                <Tab text="User Settings">
+                  <content>
+                    <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0">
+                      <children>
+                        <Label text="Username">
+                          <font>
+                            <Font name="Century Gothic" size="16.0" fx:id="x4" />
+                          </font>
+                        </Label>
+                        <TextField fx:id="txtUserName" alignment="CENTER" maxWidth="200.0" prefWidth="200.0" />
+                        <Label font="$x4" text="Email">
+                          <FlowPane.margin>
+                            <Insets top="15.0" fx:id="x5" />
+                          </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="txtEmail" alignment="CENTER" maxWidth="200.0" prefWidth="200.0" />
+                        <Label font="$x4" text="Password" FlowPane.margin="$x5" />
+                        <PasswordField fx:id="txtPassword" alignment="CENTER" maxWidth="200.0" prefWidth="200.0" />
+                      </children>
+                    </FlowPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+          </children>
+        </VBox>
+      </center>
+      <top>
+        <HBox minHeight="25.0" prefHeight="37.0" prefWidth="600.0">
+          <children>
+            <FlowPane alignment="CENTER" prefHeight="56.0" prefWidth="491.0" HBox.hgrow="ALWAYS">
+              <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="339.0" text="Welcome to Newtion">
+                  <font>
+                    <Font name="Century Gothic" size="20.0" />
+                  </font>
+                  <FlowPane.margin>
+                    <Insets fx:id="x2" />
+                  </FlowPane.margin>
+                </Label>
+              </children>
+              <HBox.margin>
+                <Insets fx:id="x2" />
+              </HBox.margin>
+            </FlowPane>
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+    <Button fx:id="btnReturn" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="32.0" minHeight="21.0" minWidth="30.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="37.0" style="-fx-background-color:transparent" text="↩" textAlignment="CENTER" textFill="WHITE">
+      <font>
+        <Font size="24.0" />
+      </font>
+      <rotationAxis>
+        <Point3D z="1.0" />
+      </rotationAxis>
+    </Button>
+  </children>
+</AnchorPane>

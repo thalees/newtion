@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-stylesheet ../styles/singIn.css?>
+
+<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="app.controllers.Home">
+  <children>
+    <BorderPane maxHeight="1138.0" minHeight="400.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <center>
+        <ScrollPane fitToWidth="true" prefHeight="537.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="1070.0" prefWidth="598.0" visible="true">
+              <children>
+                <Label layoutY="255.0" prefHeight="90.0" prefWidth="260.0" text="Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Casamentiss faiz malandris se pirulitá. Interagi no mé, cursus quis, vehicula ac nisi. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget." wrapText="true" AnchorPane.leftAnchor="23.0" />
+                <Button fx:id="btnImgOpenNewsBody" defaultButton="true" layoutY="86.0" mnemonicParsing="false" onAction="#openNewsContent" prefHeight="146.00009999999747" prefWidth="260.0" style="-fx-background-color: #444" text="..." AnchorPane.leftAnchor="23.0">
+                  <rotationAxis>
+                    <Point3D z="2.0" />
+                  </rotationAxis>
+                </Button>
+                <Label layoutY="239.0" prefWidth="260.0" text="Praesent malesuada urna amet" AnchorPane.leftAnchor="23.0">
+                  <font>
+                    <Font name="System Bold" size="12.0" fx:id="x1" />
+                  </font>
+                </Label>
+                <Pane layoutY="87.0" onMouseClicked="#openNewsContent" prefHeight="258.0" prefWidth="215.0" style="-fx-background-color:gray" AnchorPane.rightAnchor="26.0" />
+                <Label layoutY="367.0" prefHeight="66.0" prefWidth="215.0" text="Aenean aliquam molestie leo, vitae iaculis nisl. In elementis mé pra quem é amistosis quis leo. Diuretics paradis num copo é motivis de denguis. Detraxit consequat et quo num tendi nada." wrapText="true" AnchorPane.rightAnchor="26.0" />
+                <Label font="$x1" layoutY="351.0" prefWidth="215.0" text="Admodum accumsan disputationi eu sit" AnchorPane.rightAnchor="26.0" />
+                <Label layoutY="586.0" prefHeight="66.0" prefWidth="196.0" text="Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl." wrapText="true" AnchorPane.leftAnchor="23.0" />
+                <Pane layoutY="372.0" prefHeight="190.0" prefWidth="196.0" style="-fx-background-color:gray" AnchorPane.leftAnchor="23.0" />
+                <Label font="$x1" layoutY="570.0" prefWidth="196.0" text="Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis." AnchorPane.leftAnchor="23.0" />
+                <Pane layoutY="674.0" prefHeight="258.0" prefWidth="260.0" style="-fx-background-color:gray" AnchorPane.leftAnchor="23.0" />
+                <Label layoutY="957.0" prefHeight="66.0" prefWidth="260.0" text="Aenean aliquam molestie leo, vitae iaculis nisl. In elementis mé pra quem é amistosis quis leo. Diuretics paradis num copo é motivis de denguis. Detraxit consequat et quo num tendi nada." wrapText="true" AnchorPane.leftAnchor="23.0" />
+                <Label font="$x1" layoutY="938.0" prefWidth="369.0" text="Admodum accumsan disputationi eu sit" AnchorPane.leftAnchor="23.0" />
+                <Label layoutY="872.0" prefHeight="66.0" prefWidth="172.0" text="Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Casamentiss faiz malandris se pirulitá. Interagi no mé, cursus quis, vehicula ac nisi. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget." wrapText="true" AnchorPane.rightAnchor="23.0" />
+                <Pane layoutY="674.0" prefHeight="182.0" prefWidth="172.0" style="-fx-background-color:gray" AnchorPane.rightAnchor="22.0" />
+                <Label font="$x1" layoutY="856.0" prefWidth="172.0" text="Praesent malesuada urna" AnchorPane.rightAnchor="23.0" />
+                <Label layoutY="617.0" prefHeight="37.0" prefWidth="288.0" text=" Si num tem leite então bota uma pinga aí cumpadi! Interagi no mé, cursus quis, vehicula ac nisi. Não sou faixa preta cumpadi, sou preto inteiris, inteiri" wrapText="true" AnchorPane.rightAnchor="22.0" />
+                <Pane layoutY="449.0" prefHeight="146.0" prefWidth="288.0" style="-fx-background-color:gray" AnchorPane.rightAnchor="23.0" />
+                <Label font="$x1" layoutY="601.0" prefWidth="285.0" text=" Sapien in monti palavris qui num significa nadis i pareci latim." AnchorPane.rightAnchor="26.0" />
+                <FlowPane alignment="CENTER" layoutY="-3.0" prefHeight="90.0" prefWidth="586.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <children>
+                    <TextField id="txtSearchField" fx:id="txtSearch" alignment="CENTER" prefWidth="235.0" />
+                    <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#search" prefWidth="59.0" text="Search" />
+                  </children>
+                </FlowPane>
+              </children>
+              <padding>
+                <Insets left="20.0" right="20.0" />
+              </padding>
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+      </center>
+      <top>
+        <HBox minHeight="25.0" prefHeight="37.0" prefWidth="600.0">
+          <children>
+            <Button id="btnToggleSideMenu" fx:id="btnMenu" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#openProfileAndSettings" prefHeight="24.0" prefWidth="24.0" rotate="90.0" text="|||" textFill="#a533ff">
+              <font>
+                <Font name="System Italic" size="8.0" />
+              </font>
+              <HBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+              </HBox.margin>
+            </Button>
+            <FlowPane alignment="CENTER" prefHeight="56.0" prefWidth="491.0" HBox.hgrow="ALWAYS">
+              <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="339.0" text="Welcome to Newtion">
+                  <font>
+                    <Font name="Century Gothic" size="20.0" />
+                  </font>
+                  <FlowPane.margin>
+                    <Insets fx:id="x2" />
+                  </FlowPane.margin>
+                </Label>
+              </children>
+              <HBox.margin>
+                <Insets right="44.0" />
+              </HBox.margin>
+            </FlowPane>
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+  </children>
+</AnchorPane>
