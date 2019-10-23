@@ -6,10 +6,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
-import java.io.IOException;
-
+@SpringBootApplication
 public class Main extends Application {
+    private ConfigurableApplicationContext springContext;
+    private Parent rootNode;
+    private FXMLLoader fxmlLoader;
+
     public static User currentUser;
     public static Stage SignIn;
     public static Stage SignUp;
@@ -20,12 +26,17 @@ public class Main extends Application {
     public static Stage ProfileAndSettings;
 
     @Override
+    public void init() throws Exception {
+        springContext = SpringApplication.run(Main.class);
+        fxmlLoader = new FXMLLoader();
+        fxmlLoader.setControllerFactory(springContext::getBean);
+    }
+
+
+    @Override
     public void start(Stage primaryStage) {
         try {
-
-            /* User */
             currentUser = new User();
-
             /* Sing Up */
             Parent rootSignUp = FXMLLoader.load(getClass().getResource("/components/SignUp.fxml"));
             SignUp = new Stage();
@@ -70,6 +81,11 @@ public class Main extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void stop() {
+        springContext.stop();
     }
 
     public static void main(String[] args) {
