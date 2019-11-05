@@ -8,9 +8,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchDataAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = ElasticsearchDataAutoConfiguration.class)
 public class Main extends Application {
     private ConfigurableApplicationContext springContext;
     private Parent rootNode;
@@ -32,16 +33,10 @@ public class Main extends Application {
         fxmlLoader.setControllerFactory(springContext::getBean);
     }
 
-
     @Override
     public void start(Stage primaryStage) {
         try {
             currentUser = new User();
-            /* Sing Up */
-            Parent rootSignUp = FXMLLoader.load(getClass().getResource("/components/SignUp.fxml"));
-            SignUp = new Stage();
-            SignUp.setTitle("Newtion - A new way to find relevant information.");
-            SignUp.setScene(new Scene(rootSignUp));
 
             /* Sing In */
             Parent rootSingIn = FXMLLoader.load(getClass().getResource("/components/SignIn.fxml"));

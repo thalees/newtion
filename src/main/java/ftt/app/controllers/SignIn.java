@@ -1,6 +1,7 @@
-package app.controllers;
+package ftt.app.controllers;
 
 import app.Main;
+import ftt.app.adapters.DataFacade;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;
@@ -32,8 +33,11 @@ public class SignIn extends StandartController {
 	@FXML
 	private TextField txtUser;
 
+	private DataFacade dataFacade = new DataFacade();
+
 	@FXML
 	void Login(ActionEvent event) {
+		StandartController.showAlert("Data", dataFacade.getNewsInformation(), AlertType.INFORMATION);
 		try {
 			if (txtUser.getText().equals("admin") && txtPassword.getText().equals("admin")) {
 				Main.Home.show();
@@ -50,6 +54,7 @@ public class SignIn extends StandartController {
 
 	@FXML
 	void changeToSingUp(ActionEvent event) {
+		StandartController.showAlert("Data", dataFacade.getNewsInformation(), AlertType.INFORMATION);
 		Stage stage = null;
 
 		try {

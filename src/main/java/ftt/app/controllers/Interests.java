@@ -1,4 +1,4 @@
-package app.controllers;
+package ftt.app.controllers;
 
 import app.Main;
 import app.enums.AvailableInterests;
