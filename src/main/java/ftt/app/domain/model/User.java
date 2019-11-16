@@ -1,13 +1,19 @@
-package app.model;
+package ftt.app.domain.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-import app.enums.AvailableInterests;
-import app.enums.AvailablePlatforms;
+import ftt.app.infra.enums.AvailableInterests;
+import ftt.app.infra.enums.AvailablePlatforms;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class User {
+    private int id;
     private String name;
     private String email;
     private String password;
@@ -28,6 +34,11 @@ public class User {
         this.interests = new ArrayList<AvailableInterests>();
     }
 
+    @Id
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
+    @Column
     public String getName() {
         return name;
     }
@@ -35,6 +46,7 @@ public class User {
         this.name = name;
     }
 
+    @Column
     public String getEmail() {
         return email;
     }
@@ -42,6 +54,7 @@ public class User {
         this.email = email;
     }
 
+    @Column
     public String getPassword() {
         return password;
     }
@@ -50,6 +63,7 @@ public class User {
     }
 
     /* ----------------- interests ----------------- */
+    @Column
     public Collection<AvailableInterests> getInterests() {
         return Collections.unmodifiableCollection(this.interests);
     }
@@ -71,6 +85,7 @@ public class User {
     }
 
     /* ----------------- platforms ----------------- */
+    @Column
     public Collection<AvailableInterests> getPlatforms() {
         return Collections.unmodifiableCollection(this.interests);
     }

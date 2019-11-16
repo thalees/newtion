@@ -1,6 +1,6 @@
-package app.controllers.stateMachine;
+package ftt.app.infra.controllers.stateMachine;
 
-import app.enums.AvailableStates;
+import ftt.app.infra.enums.AvailableStates;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

@@ -1,7 +1,7 @@
-package ftt.app.controllers;
+package ftt.app.infra.controllers;
 
 import app.Main;
-import app.enums.AvailablePlatforms;
+import ftt.app.infra.enums.AvailablePlatforms;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;

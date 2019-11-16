@@ -1,6 +1,6 @@
-package app.controllers.stateMachine;
+package ftt.app.infra.controllers.stateMachine;
 
-import app.enums.AvailableStates;
+import ftt.app.infra.enums.AvailableStates;
 import javafx.stage.Stage;
 
 import java.io.IOException;

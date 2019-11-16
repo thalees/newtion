@@ -1,4 +1,4 @@
-package app.enums;
+package ftt.app.infra.enums;
 
 public enum AvailableInterests {
 	Investment,
