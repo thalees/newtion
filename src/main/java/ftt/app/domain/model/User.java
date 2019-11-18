@@ -3,10 +3,6 @@ package ftt.app.domain.model;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-
-import ftt.app.infra.enums.AvailableInterests;
-import ftt.app.infra.enums.AvailablePlatforms;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,21 +13,21 @@ public class User {
     private String name;
     private String email;
     private String password;
-    private ArrayList<AvailableInterests> interests;
-    private ArrayList<AvailablePlatforms> platforms;
+    private ArrayList<Interest> interests;
+    private ArrayList<Platform> platforms;
 
     public User() {
         this.name = "";
         this.email = "";
         this.password = "";
-        this.interests = new ArrayList<AvailableInterests>();
+        this.interests = new ArrayList<Interest>();
     }
 
     public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.interests = new ArrayList<AvailableInterests>();
+        this.interests = new ArrayList<Interest>();
     }
 
     @Id
@@ -64,15 +60,15 @@ public class User {
 
     /* ----------------- interests ----------------- */
     @Column
-    public Collection<AvailableInterests> getInterests() {
+    public Collection<Interest> getInterests() {
         return Collections.unmodifiableCollection(this.interests);
     }
 
-    public void addInterest(AvailableInterests interest) {
+    public void addInterest(Interest interest) {
         this.interests.add(interest);
     }
 
-    public void removeInterest(AvailableInterests interest) {
+    public void removeInterest(Interest interest) {
         for (int idx = 0; idx < this.interests.size(); idx++) {
             if(this.interests.get(idx) == interest) {
                 this.interests.remove(idx);
@@ -80,21 +76,21 @@ public class User {
         }
     }
 
-    public void setInterests(ArrayList<AvailableInterests> interests) {
+    public void setInterests(ArrayList<Interest> interests) {
         this.interests = interests;
     }
 
     /* ----------------- platforms ----------------- */
     @Column
-    public Collection<AvailableInterests> getPlatforms() {
+    public Collection<Interest> getPlatforms() {
         return Collections.unmodifiableCollection(this.interests);
     }
 
-    public void addPlatforms(AvailablePlatforms platform) {
+    public void addPlatforms(Platform platform) {
         this.platforms.add(platform);
     }
 
-    public void removePlatforms(AvailablePlatforms platforms) {
+    public void removePlatforms(Platform platforms) {
         for (int idx = 0; idx < this.platforms.size(); idx++) {
             if(this.platforms.get(idx) == platforms) {
                 this.platforms.remove(idx);
@@ -102,7 +98,7 @@ public class User {
         }
     }
 
-    public void setPlatforms(ArrayList<AvailablePlatforms> platforms) {
+    public void setPlatforms(ArrayList<Platform> platforms) {
         this.platforms = platforms;
     }
 }
