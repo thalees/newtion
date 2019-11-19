@@ -1,7 +1,7 @@
-package ftt.app.controllers;
+package ftt.app.infra.controllers;
 
 import app.Main;
-import app.enums.AvailableInterests;
+import ftt.app.domain.model.Interest;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;
@@ -96,12 +96,12 @@ public class Interests {
 		return false;
 	}
 
-	private ArrayList<AvailableInterests> getInterests() {
-		ArrayList<AvailableInterests> selectedInterests = new ArrayList<AvailableInterests>();
+	private ArrayList<Interest> getInterests() {
+		ArrayList<Interest> selectedInterests = new ArrayList<Interest>();
 		for (CheckBox chk : chks) {
 			if (chk != null && chk.isSelected()) {
 				String interest = chk.getId().replace("chk", "");
-				AvailableInterests enumInterest = AvailableInterests.valueOf(interest);
+				Interest enumInterest = new Interest(interest);
 				selectedInterests.add(enumInterest);
 			}
 		}

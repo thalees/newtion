@@ -1,7 +1,7 @@
-package ftt.app.controllers;
+package ftt.app.infra.controllers;
 
 import app.Main;
-import app.enums.AvailablePlatforms;
+import ftt.app.domain.model.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;
@@ -95,13 +95,13 @@ public class SourcePlatforms {
 		}
 		return false;
 	}
-	
-	private ArrayList<AvailablePlatforms> getSourcePlatforms() {
-		ArrayList<AvailablePlatforms> selectedPlatforms = new ArrayList<AvailablePlatforms>();
+
+	private ArrayList<Platform> getSourcePlatforms() {
+		ArrayList<Platform> selectedPlatforms = new ArrayList<Platform>();
 		for (CheckBox chk : chks) {
 			if (chk != null && chk.isSelected()) {
 				String platform = chk.getId().replace("chk", "");
-				AvailablePlatforms enumPlatform = AvailablePlatforms.valueOf(platform);
+				Platform enumPlatform = new Platform(platform);
 				selectedPlatforms.add(enumPlatform);
 			}
 		}

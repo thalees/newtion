@@ -1,7 +1,7 @@
-package ftt.app.controllers;
+package ftt.app.infra.controllers;
 
 import app.Main;
-import ftt.app.adapters.DataFacade;
+import ftt.app.application.DataFacade;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;

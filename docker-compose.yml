@@ -1,4 +1,4 @@
-version: '2.2'
+version: '3.7'
 
 services:
   db:
@@ -13,18 +13,17 @@ services:
     volumes:
       - db:/var/lib/newtion_postgres
 
-#  newtion:
-#    build:
-#      context: .
-#    image: newtion
-#    hostname: newtion
-#    ports:
-#      - "80:8080"
-#    init: true
-#    depends_on:
-#      - db
-#    environment:
-#      - "DATABASE_URL=jdbc:postgresql://db:5432/newtion?user=postgres"
+  newtion:
+    build:
+      context: .
+    image: app/newtion
+    ports:
+      - "80:8080"
+    init: true
+    depends_on:
+      - db
+    environment:
+      - "DATABASE_URL=jdbc:postgresql://db:5432/newtion?user=postgres"
 
 volumes:
   db:

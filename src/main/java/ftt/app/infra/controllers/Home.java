@@ -1,4 +1,4 @@
-package ftt.app.controllers;
+package ftt.app.infra.controllers;
 
 import app.Main;
 import javafx.event.ActionEvent;
