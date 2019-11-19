@@ -1,0 +1,24 @@
+.image-beauty {
+    -fx-background-image: url(../../static/image.png);
+}
+
+.user-field {
+    -fx-background-color: #C4C4C4;
+    -fx-text-fill: white;
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.password-field {
+    -fx-background-color: #C4C4C4;
+    -fx-text-fill: white;
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.label {
+    -fx-font: 16px "Arial";
+}
+
+.login-button {
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: white;
+}

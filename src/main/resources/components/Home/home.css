@@ -1,0 +1,23 @@
+.root {
+    -fx-background-color: #2d2d2d;
+}
+
+.title-label {
+    -fx-text-fill: white;
+}
+
+.news-panel {
+    -fx-background-color: #2d2d2d;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-color: white;
+}
+
+.text-field {
+    -fx-background-radius: 0, 0, 0, 0;
+}
