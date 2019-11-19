@@ -56,7 +56,7 @@ public class Main extends Application {
             Home.setScene(new Scene(rootHome));
 
             /* Source Platforms */
-            Parent rootPlatforms = FXMLLoader.load(getClass().getResource("/components/SourcePlatforms.fxml"));
+            Parent rootPlatforms = FXMLLoader.load(getClass().getResource("/components/SourcePlatforms/SourcePlatforms.fxml"));
             SourcePlatforms = new Stage();
             SourcePlatforms.setScene(new Scene(rootPlatforms));
 
