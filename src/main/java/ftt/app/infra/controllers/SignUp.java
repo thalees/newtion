@@ -1,4 +1,4 @@
-package ftt.app.controllers;
+package ftt.app.infra.controllers;
 
 import app.Main;
 import javafx.event.ActionEvent;
@@ -9,8 +9,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import app.model.User;
-
+import ftt.app.domain.model.User;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;

@@ -1,16 +1,12 @@
 package ftt.app.infra.clients;
 
-import net.minidev.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-//import org.json.simple.JSONObject;
-
-public class NewClient {
+public class NewsClient {
     public String getNews() throws IOException{
         String url = "https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=492ef967dc7f40aab125debfc758b0e1";
         URL obj = new URL(url);

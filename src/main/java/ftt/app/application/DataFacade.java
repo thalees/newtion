@@ -1,14 +1,14 @@
-package ftt.app.adapters;
+package ftt.app.application;
 
-import ftt.app.infra.clients.NewClient;
+import ftt.app.infra.clients.NewsClient;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DataFacade  {
-    private NewClient client;
+    private NewsClient client;
 
     public DataFacade() {
-        this.client = new NewClient();
+        this.client = new NewsClient();
     }
 
     public String getNewsInformation(){

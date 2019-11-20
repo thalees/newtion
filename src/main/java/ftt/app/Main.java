@@ -1,6 +1,6 @@
 package app;
 
-import app.model.User;
+import ftt.app.domain.model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
