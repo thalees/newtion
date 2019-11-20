@@ -1,19 +1,27 @@
 package ftt.app.infra.controllers;
 
-import app.Main;
+import ftt.app.Main;
 import ftt.app.application.DataFacade;
+import ftt.app.domain.model.User;
+import ftt.app.infra.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SignIn extends StandartController {
+@Controller
+public class SignIn {
 
 	@FXML
 	private ResourceBundle resources;
@@ -33,13 +41,15 @@ public class SignIn extends StandartController {
 	@FXML
 	private TextField txtUser;
 
-	private DataFacade dataFacade = new DataFacade();
+	@Autowired
+	private UserService userService;
 
 	@FXML
 	void Login(ActionEvent event) {
-		StandartController.showAlert("Data", dataFacade.getNewsInformation(), AlertType.INFORMATION);
 		try {
-			if (txtUser.getText().equals("admin") && txtPassword.getText().equals("admin")) {
+			User current = userService.find(txtUser.getText().trim(), txtPassword.getText().trim());
+			if (current != null) {
+				Main.currentUser = current;
 				Main.Home.show();
 				Stage currentStage = (Stage) link_register.getScene().getWindow();
 				currentStage.hide();
@@ -54,23 +64,15 @@ public class SignIn extends StandartController {
 
 	@FXML
 	void changeToSingUp(ActionEvent event) {
-		StandartController.showAlert("Data", dataFacade.getNewsInformation(), AlertType.INFORMATION);
-		Stage stage = null;
-
 		try {
-
 			Stage currentStage = (Stage) link_register.getScene().getWindow();
 			currentStage.hide();
 			Main.SignUp.show();
-			
 
-			/*
-			 * Parent root =
-			 * FXMLLoader.load(getClass().getResource("../views/SingUp.fxml")); stage = new
-			 * Stage(); stage.setScene(new Scene(root));
-			 * stage.setTitle("Newtion - A new way to find relevant information.");
-			 * stage.show();
-			 */
+			  Parent root = FXMLLoader.load(getClass().getResource("/components/SingUp.fxml"));
+			  Stage stage = new Stage(); stage.setScene(new Scene(root));
+			  stage.setTitle("Newtion - A new way to find relevant information.");
+			  stage.show();
 
 		} catch (Exception e) {
 			e.printStackTrace();

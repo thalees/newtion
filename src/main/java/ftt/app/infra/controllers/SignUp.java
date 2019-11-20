@@ -1,6 +1,7 @@
 package ftt.app.infra.controllers;
 
-import app.Main;
+import ftt.app.Main;
+import ftt.app.infra.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;
@@ -10,12 +11,20 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import ftt.app.domain.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Controller;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Controller
 public class SignUp {
+
+	@Autowired
+	private UserService userService;
 
 	private String defaultMessage = "We also don't like long registration forms.\n"
 			+ "But please enter the required data in the following " + "fields: Username, Email and Password.";
@@ -83,10 +92,12 @@ public class SignUp {
 			if (validationFields()) {
 				Stage currentStage = (Stage) link_sing_in.getScene().getWindow();
 				currentStage.hide();
-				String name = this.txtUsername.getText().trim();
+				String nickname = this.txtUsername.getText().trim();
 				String email = this.txtEmail.getText().trim();
 				String password = this.txtPassword.getText().trim();
-				Main.currentUser = new User(name, email, password);
+				User user = new User(nickname, email, password);
+				saveUser(user);
+				Main.currentUser = user;
 				Main.Interests.show();
 			} else {
 				StandartController.showAlert(defaultMessage, specificMessage, AlertType.ERROR);
@@ -118,6 +129,10 @@ public class SignUp {
 		assert txtPassword != null : "fx:id=\"txtPassword\" was not injected: check your FXML file 'SignUp.fxml'.";
 		assert txtUsername != null : "fx:id=\"txtUsername\" was not injected: check your FXML file 'SignUp.fxml'.";
 
+	}
+
+	private void saveUser(User user){
+		userService.create(user);
 	}
 
 }
