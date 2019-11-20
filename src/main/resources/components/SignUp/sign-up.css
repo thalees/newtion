@@ -1,0 +1,26 @@
+.image-beauty {
+    -fx-background-image: url(../../static/image.png);
+}
+
+.password-field {
+     -fx-background-color: #C4C4C4;
+     -fx-text-fill: white;
+     -fx-background-radius: 0, 0, 0, 0;
+ }
+
+ .field-email {
+    -fx-background-color: #C4C4C4;
+    -fx-text-fill: white;
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.field-username{
+    -fx-background-color: #C4C4C4;
+    -fx-text-fill: white;
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.register-button {
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: white;
+}

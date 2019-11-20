@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?scenebuilder-stylesheet ../styles/singIn.css?>
+
+<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@source-platforms.css" visible="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftt.app.controllers.SourcePlatforms">
+  <children>
+    <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <bottom>
+        <FlowPane alignment="CENTER" columnHalignment="LEFT" hgap="15.0" prefHeight="52.0" prefWidth="600.0" stylesheets="@source-platforms.css">
+          <children>
+            <Button fx:id="btnBack" minWidth="70.0" mnemonicParsing="false" onAction="#backToInterests" styleClass="btnDefault" text="Back" />
+            <Button fx:id="btnClear" minWidth="70.0" mnemonicParsing="false" onAction="#clearPlatformsSelected" styleClass="btnDefault" text="Clear" />
+            <Button fx:id="btnContinue" minWidth="70.0" mnemonicParsing="false" onAction="#finishRegistration" styleClass="btnDefault" text="Continue" />
+          </children>
+        </FlowPane>
+      </bottom>
+      <center>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+              <children>
+                <VBox prefHeight="200.0" prefWidth="100.0" style="&#10;" HBox.hgrow="ALWAYS">
+                  <children>
+                    <FlowPane alignment="CENTER_LEFT" maxWidth="-1.0" prefHeight="48.0" prefWidth="194.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <CheckBox fx:id="chkBBC" mnemonicParsing="false" prefHeight="21.000091552734375" text="BBC">
+                          <FlowPane.margin>
+                            <Insets left="50.0" fx:id="x1" />
+                          </FlowPane.margin>
+                        </CheckBox>
+                      </children>
+                      <VBox.margin>
+                        <Insets fx:id="x2" />
+                      </VBox.margin>
+                    </FlowPane>
+                    <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <CheckBox fx:id="chkG1" mnemonicParsing="false" prefHeight="21.000091552734375" text="G1" FlowPane.margin="$x1" />
+                      </children>
+                    </FlowPane>
+                    <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <CheckBox fx:id="chkGazeta" mnemonicParsing="false" prefHeight="21.000091552734375" text="Gazeta" FlowPane.margin="$x1" />
+                      </children>
+                    </FlowPane>
+                    <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <CheckBox fx:id="chkMedium" mnemonicParsing="false" prefHeight="21.000091552734375" text="Medium">
+                          <FlowPane.margin>
+                            <Insets left="50.0" fx:id="x1" />
+                          </FlowPane.margin>
+                        </CheckBox>
+                      </children>
+                    </FlowPane>
+                    <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <CheckBox fx:id="chkFolha" mnemonicParsing="false" prefHeight="21.000091552734375" text="Folha">
+                          <FlowPane.margin>
+                            <Insets left="50.0" fx:id="x1" />
+                          </FlowPane.margin>
+                        </CheckBox>
+                      </children>
+                    </FlowPane>
+                    <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <CheckBox fx:id="chkStartSe" mnemonicParsing="false" prefHeight="21.000091552734375" text="StartSe">
+                          <FlowPane.margin>
+                            <Insets left="50.0" fx:id="x1" />
+                          </FlowPane.margin>
+                        </CheckBox>
+                      </children>
+                    </FlowPane>
+                  </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" style="&#10;" HBox.hgrow="ALWAYS">
+                  <children>
+                    <FlowPane alignment="CENTER_LEFT" maxWidth="-1.0" prefHeight="48.0" prefWidth="194.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <CheckBox fx:id="chkAbril" mnemonicParsing="false" prefHeight="21.000091552734375" text="Abril">
+                          <FlowPane.margin>
+                            <Insets left="50.0" fx:id="x1" />
+                          </FlowPane.margin>
+                        </CheckBox>
+                      </children>
+                      <VBox.margin>
+                        <Insets fx:id="x2" />
+                      </VBox.margin>
+                    </FlowPane>
+                    <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <CheckBox fx:id="chkDZone" mnemonicParsing="false" prefHeight="21.000091552734375" text="DZone">
+                          <FlowPane.margin>
+                            <Insets left="50.0" fx:id="x1" />
+                          </FlowPane.margin>
+                        </CheckBox>
+                      </children>
+                    </FlowPane>
+                    <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <CheckBox fx:id="chkExame" mnemonicParsing="false" prefHeight="21.000091552734375" text="Exame">
+                          <FlowPane.margin>
+                            <Insets left="50.0" fx:id="x1" />
+                          </FlowPane.margin>
+                        </CheckBox>
+                      </children>
+                    </FlowPane>
+                    <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <CheckBox fx:id="chkVeja" mnemonicParsing="false" prefHeight="21.000091552734375" text="Veja">
+                          <FlowPane.margin>
+                            <Insets left="50.0" fx:id="x1" />
+                          </FlowPane.margin>
+                        </CheckBox>
+                      </children>
+                    </FlowPane>
+                    <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <CheckBox fx:id="chkR7" mnemonicParsing="false" prefHeight="21.000091552734375" text="R7">
+                          <FlowPane.margin>
+                            <Insets left="50.0" fx:id="x1" />
+                          </FlowPane.margin>
+                        </CheckBox>
+                      </children>
+                    </FlowPane>
+                    <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <CheckBox fx:id="chkInfoQ" mnemonicParsing="false" prefHeight="21.000091552734375" text="InfoQ">
+                          <FlowPane.margin>
+                            <Insets left="50.0" fx:id="x1" />
+                          </FlowPane.margin>
+                        </CheckBox>
+                      </children>
+                    </FlowPane>
+                  </children>
+                </VBox>
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+      </center>
+      <top>
+        <FlowPane alignment="CENTER" prefHeight="66.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+          <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="194.0" text="Source Platforms" FlowPane.margin="$x2">
+              <font>
+                <Font name="Century Gothic" size="20.0" />
+              </font>
+            </Label>
+          </children>
+        </FlowPane>
+      </top>
+    </BorderPane>
+  </children>
+</AnchorPane>
