@@ -18,7 +18,7 @@
   <children>
     <BorderPane maxHeight="1138.0" minHeight="400.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <top>
-        <HBox minHeight="25.0" prefHeight="37.0" prefWidth="600.0">
+        <HBox minHeight="25.0" prefHeight="37.0" prefWidth="600.0" styleClass="news-panel">
           <children>
             <Button id="btnToggleSideMenu" fx:id="btnMenu" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#openProfileAndSettings" prefHeight="24.0" prefWidth="24.0" rotate="90.0" text="|||" textFill="#a533ff">
               <font>
@@ -49,7 +49,7 @@
          <right>
         <ScrollPane fitToWidth="true" prefHeight="537.0" prefWidth="600.0" BorderPane.alignment="CENTER">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="1070.0" prefWidth="598.0" visible="true">
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="1070.0" prefWidth="598.0" styleClass="news-panel" visible="true">
               <children>
                 <Label layoutY="255.0" prefHeight="90.0" prefWidth="260.0" text="Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Casamentiss faiz malandris se pirulitá. Interagi no mé, cursus quis, vehicula ac nisi. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget." wrapText="true" AnchorPane.leftAnchor="23.0" />
                 <Button fx:id="btnImgOpenNewsBody" defaultButton="true" layoutY="86.0" mnemonicParsing="false" onAction="#openNewsContent" prefHeight="146.00009999999747" prefWidth="260.0" style="-fx-background-color: #444" text="..." AnchorPane.leftAnchor="23.0">
@@ -77,10 +77,13 @@
                 <Label layoutY="617.0" prefHeight="37.0" prefWidth="288.0" text=" Si num tem leite então bota uma pinga aí cumpadi! Interagi no mé, cursus quis, vehicula ac nisi. Não sou faixa preta cumpadi, sou preto inteiris, inteiri" wrapText="true" AnchorPane.rightAnchor="22.0" />
                 <Pane layoutY="449.0" prefHeight="146.0" prefWidth="288.0" style="-fx-background-color:gray" AnchorPane.rightAnchor="23.0" />
                 <Label font="$x1" layoutY="601.0" prefWidth="285.0" text=" Sapien in monti palavris qui num significa nadis i pareci latim." AnchorPane.rightAnchor="26.0" />
-                <FlowPane alignment="CENTER" layoutY="-3.0" prefHeight="90.0" prefWidth="586.0" styleClass="news-panel" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                <FlowPane alignment="CENTER" layoutX="40.0" layoutY="-9.0" prefHeight="96.0" prefWidth="542.0" styleClass="news-panel" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                   <children>
-                    <TextField id="txtSearchField" fx:id="txtSearch" alignment="CENTER" prefWidth="235.0" />
-                    <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#search" prefHeight="26.0" prefWidth="123.0" text="Search" />
+                    <TextField id="txtSearchField" fx:id="txtSearch" alignment="CENTER" prefHeight="26.0" prefWidth="266.0" />
+                    <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#search" pickOnBounds="false" prefHeight="26.0" prefWidth="87.0" text="Search" textAlignment="RIGHT">
+                                 <FlowPane.margin>
+                                    <Insets left="15.0" />
+                                 </FlowPane.margin></Button>
                   </children>
                 </FlowPane>
               </children>

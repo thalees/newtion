@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?scenebuilder-stylesheet ../styles/singIn.css?>
 
-<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@interests.css" visible="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftt.app.controllers.Interests">
+<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" visible="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftt.app.controllers.Interests">
   <children>
     <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <bottom>
@@ -161,4 +162,8 @@
       </top>
     </BorderPane>
   </children>
+   <stylesheets>
+      <URL value="@interests.css" />
+      <URL value="@interests.css" />
+   </stylesheets>
 </AnchorPane>
