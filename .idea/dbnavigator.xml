@@ -25,7 +25,8 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="48ebe1eb-c01a-4846-8c37-0c87149a6736">
-        <schema name="public" object-types="table" />
+        <schema name="pg_catalog" object-types="function" />
+        <schema name="public" object-types="sequence, dataset trigger, view, constraint, table, column, function, index" />
       </connection>
     </loaded-nodes>
   </component>
@@ -49,13 +50,12 @@
     <connection id="d7ee7bb9-07af-416b-b0af-166674c3f11f" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="48ebe1eb-c01a-4846-8c37-0c87149a6736" dataset="public.users" active-filter-id="" />
+    <filter-actions connection-id="48ebe1eb-c01a-4846-8c37-0c87149a6736" dataset="public.platforms" active-filter-id="" />
     <filter-actions connection-id="48ebe1eb-c01a-4846-8c37-0c87149a6736" dataset="public.account" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
-  </component>
-  <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/init.sql" connection-id="48ebe1eb-c01a-4846-8c37-0c87149a6736" session-id="MAIN" current-schema="public" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -179,7 +179,7 @@
           <deprecated-pwd value="" />
         </database>
         <properties>
-          <auto-commit value="false" />
+          <auto-commit value="true" />
         </properties>
         <ssh-settings>
           <active value="false" />
