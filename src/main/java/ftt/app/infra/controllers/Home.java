@@ -1,6 +1,6 @@
 package ftt.app.infra.controllers;
 
-import app.Main;
+import ftt.app.Main;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;

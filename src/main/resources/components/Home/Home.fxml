@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?scenebuilder-stylesheet ../styles/singIn.css?>
 
-<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@home.css" visible="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftt.app.controllers.Home">
+<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@home.css" visible="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftt.app.infra.controllers.Home">
   <children>
     <BorderPane maxHeight="1138.0" minHeight="400.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <top>

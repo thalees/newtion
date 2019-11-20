@@ -9,8 +9,4 @@ COPY . $APP_DIR
 
 EXPOSE 8080
 
-FROM postgres:9.3
-ENV POSTGRES_DB newtion
-ADD init.sql /docker-entrypoint-initdb.d/
-
-ENTRYPOINT ["--", "sh", "init.sh"]
+ENTRYPOINT ["/init", "--", "sh", "init.sh"]

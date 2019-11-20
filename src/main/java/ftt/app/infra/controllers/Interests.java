@@ -1,6 +1,6 @@
 package ftt.app.infra.controllers;
 
-import app.Main;
+import ftt.app.Main;
 import ftt.app.domain.model.Interest;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -113,7 +113,7 @@ public class Interests {
 		try {
 			if (validateInterests()) {
 				Stage currentStage = (Stage) btnClear.getScene().getWindow();
-				Main.currentUser.setInterests(this.getInterests());
+//				Main.currentUser.setInterests(this.getInterests());
 				currentStage.hide();
 				Main.SourcePlatforms.show();
 			} else {

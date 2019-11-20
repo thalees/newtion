@@ -1,6 +1,6 @@
 package ftt.app.infra.controllers;
 
-import app.Main;
+import ftt.app.Main;
 import ftt.app.domain.model.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -113,7 +113,7 @@ public class SourcePlatforms {
     	try {
     		if (this.validatePlatforms()) {
 				Stage currentStage = (Stage) btnClear.getScene().getWindow();
-				Main.currentUser.setPlatforms(this.getSourcePlatforms());
+//				Main.currentUser.setPlatforms(this.getSourcePlatforms());
 				currentStage.hide();
 				Main.SourcePlatforms.show();
 			} else {

@@ -1,6 +1,6 @@
 package ftt.app.infra.controllers;
 
-import app.Main;
+import ftt.app.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;
@@ -88,7 +88,7 @@ public class ProfileAndSettings {
     	String password = txtPassword.getText().trim();
     	
     	if (validationFields()) {
-			Main.currentUser.setName(name);
+			Main.currentUser.setUsername(name);
 	    	Main.currentUser.setEmail(email);
 	    	Main.currentUser.setPassword(password);
 	    	StandartController.showAlert("Success!", "Your information has been updated with success.", AlertType.INFORMATION);
@@ -134,7 +134,7 @@ public class ProfileAndSettings {
     @FXML
     void initialize() {
     	if(Main.currentUser != null) {
-        	txtUserName.setText(Main.currentUser.getName());
+        	txtUserName.setText(Main.currentUser.getUsername());
         	txtEmail.setText(Main.currentUser.getEmail());
         	txtPassword.setText(Main.currentUser.getPassword());
         }
