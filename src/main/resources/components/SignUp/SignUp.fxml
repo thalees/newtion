@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane disable="false" minHeight="400.0" minWidth="300.0" prefHeight="400.0" prefWidth="600.0" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ftt.app.infra.controllers.SignUp">
+<AnchorPane disable="false" minHeight="400.0" minWidth="300.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@sign-up.css" visible="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftt.app.controllers.SignUp">
   <children>
     <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
         <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" snapToPixel="true" style="-fx-background-color: gray;" HBox.hgrow="ALWAYS">
           <children>
-            <Label alignment="CENTER" prefHeight="400.0" prefWidth="298.0" text="[Beautiful image]" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+            <Label alignment="CENTER" prefHeight="400.0" prefWidth="300.0" styleClass="image-beauty" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <font>
                 <Font name="Century Gothic" size="16.0" fx:id="x1" />
               </font>
@@ -34,7 +40,7 @@
                 <Label font="$x1" prefWidth="109.0" text="Username" textAlignment="LEFT" />
               </children>
             </FlowPane>
-            <TextField fx:id="txtUsername" alignment="CENTER" disable="false" editable="true" prefHeight="30.0" prefWidth="200.0" promptText="">
+            <TextField fx:id="txtUsername" alignment="CENTER" disable="false" editable="true" prefHeight="30.0" prefWidth="200.0" promptText="" styleClass="field-username">
               <VBox.margin>
                 <Insets bottom="20.0" top="5.0" fx:id="x2" />
               </VBox.margin>
@@ -44,7 +50,7 @@
                 <Label font="$x1" prefWidth="109.0" text="Email" textAlignment="LEFT" />
               </children>
             </FlowPane>
-            <TextField fx:id="txtEmail" alignment="CENTER" disable="false" editable="true" prefHeight="30.0" prefWidth="200.0" promptText="">
+            <TextField fx:id="txtEmail" alignment="CENTER" disable="false" editable="true" prefHeight="30.0" prefWidth="200.0" promptText="" styleClass="field-email">
               <VBox.margin>
                 <Insets bottom="20.0" top="5.0" fx:id="x3" />
               </VBox.margin>
@@ -59,8 +65,8 @@
                 <Insets bottom="20.0" top="5.0" fx:id="x2" />
               </VBox.margin>
             </PasswordField>
-            <Button fx:id="btnRegister" font="$x1" minHeight="32.0" mnemonicParsing="false" onAction="#StartRegistration" prefHeight="42.0" prefWidth="136.0" text="Register" />
-            <Hyperlink id="linkSingIn" fx:id="link_sing_in" alignment="CENTER" contentDisplay="CENTER" onAction="#backToSingIn" prefWidth="298.0" text="Are you already registered?" textFill="#a533ff" underline="true" VBox.vgrow="ALWAYS">
+            <Button fx:id="btnRegister" font="$x1" minHeight="32.0" mnemonicParsing="false" onAction="#StartRegistration" prefHeight="42.0" prefWidth="136.0" styleClass="register-button" text="Register" />
+            <Hyperlink id="linkSingIn" fx:id="link_sing_in" alignment="CENTER" contentDisplay="CENTER" onAction="#backToSingIn" prefWidth="298.0" text="Are you already registered?" textFill="#0d0911" underline="true" VBox.vgrow="ALWAYS">
               <font>
                 <Font name="Century Gothic" size="14.0" />
               </font>

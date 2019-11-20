@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ftt.app.infra.controllers.SignIn">
+<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@sign-in.css" visible="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftt.app.controllers.SignIn">
   <children>
     <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
         <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="200.0" style="" HBox.hgrow="ALWAYS">
           <children>
-            <Label alignment="CENTER" prefWidth="299.9999000000025" text="Sing In">
+            <Label alignment="CENTER" prefWidth="299.9999000000025" styleClass="label-title" text="Sing In">
               <font>
                 <Font name="Century Gothic" size="22.0" />
               </font>
@@ -31,7 +35,7 @@
                 </Label>
               </children>
             </FlowPane>
-            <TextField fx:id="txtUser" alignment="CENTER" disable="false" editable="true" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="" VBox.vgrow="ALWAYS">
+            <TextField fx:id="txtUser" alignment="CENTER" disable="false" editable="true" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="" styleClass="user-field" VBox.vgrow="ALWAYS">
               <VBox.margin>
                 <Insets bottom="20.0" top="5.0" fx:id="x2" />
               </VBox.margin>
@@ -41,13 +45,13 @@
                 <Label font="$x1" prefWidth="109.0" text="Password" textAlignment="LEFT" />
               </children>
             </FlowPane>
-            <PasswordField fx:id="txtPassword" alignment="CENTER" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <PasswordField fx:id="txtPassword" alignment="CENTER" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" styleClass="password-field" VBox.vgrow="ALWAYS">
               <VBox.margin>
                 <Insets bottom="20.0" top="5.0" fx:id="x2" />
               </VBox.margin>
             </PasswordField>
-            <Button fx:id="btnLogin" cache="true" cacheHint="DEFAULT" cancelButton="false" defaultButton="false" font="$x1" maxHeight="32.0" minHeight="32.0" mnemonicParsing="false" mouseTransparent="false" onAction="#Login" pickOnBounds="false" prefHeight="32.0" prefWidth="136.0" style="" text="Login" VBox.vgrow="ALWAYS" />
-            <Hyperlink fx:id="link_register" alignment="CENTER" contentDisplay="CENTER" onAction="#changeToSingUp" prefWidth="298.0" text="Are you not registered?" textFill="#a533ff" underline="true">
+            <Button fx:id="btnLogin" cache="true" cacheHint="DEFAULT" cancelButton="false" defaultButton="false" font="$x1" maxHeight="32.0" minHeight="32.0" mnemonicParsing="false" mouseTransparent="false" onAction="#Login" pickOnBounds="false" prefHeight="32.0" prefWidth="136.0" style="" styleClass="login-button" text="Login" VBox.vgrow="ALWAYS" />
+            <Hyperlink fx:id="link_register" alignment="CENTER" contentDisplay="CENTER" onAction="#changeToSingUp" prefWidth="298.0" text="Are you not registered?" textFill="#0c0314" underline="true">
               <font>
                 <Font size="14.0" />
               </font>
@@ -62,7 +66,7 @@
         </VBox>
         <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" snapToPixel="true" style="-fx-background-color: gray;" HBox.hgrow="ALWAYS">
           <children>
-            <Label alignment="CENTER" font="$x1" prefHeight="400.0" prefWidth="298.0" text="[Beautiful image]" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0" />
+            <Label alignment="CENTER" font="$x1" prefHeight="400.0" prefWidth="300.0" styleClass="image-beauty" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
           </children>
         </AnchorPane>
       </children>

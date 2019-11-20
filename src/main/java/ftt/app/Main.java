@@ -39,24 +39,24 @@ public class Main extends Application {
             currentUser = new User();
 
             /* Sing In */
-            Parent rootSingIn = FXMLLoader.load(getClass().getResource("/components/SignIn.fxml"));
+            Parent rootSingIn = FXMLLoader.load(getClass().getResource("/components/SignIn/SignIn.fxml"));
             SignIn = new Stage();
             SignIn.setTitle("Newtion - A new way to find relevant information.");
             SignIn.setScene(new Scene(rootSingIn));
 
             /* Interests */
-            Parent rootInterests = FXMLLoader.load(getClass().getResource("/components/Interests.fxml"));
+            Parent rootInterests = FXMLLoader.load(getClass().getResource("/components/Interests/Interests.fxml"));
             Interests = new Stage();
             Interests.setTitle("Newtion - A new way to find relevant information.");
             Interests.setScene(new Scene(rootInterests));
 
             /* Home */
-            Parent rootHome = FXMLLoader.load(getClass().getResource("/components/Home.fxml"));
+            Parent rootHome = FXMLLoader.load(getClass().getResource("/components/Home/Home.fxml"));
             Home = new Stage();
             Home.setScene(new Scene(rootHome));
 
             /* Source Platforms */
-            Parent rootPlatforms = FXMLLoader.load(getClass().getResource("/components/SourcePlatforms.fxml"));
+            Parent rootPlatforms = FXMLLoader.load(getClass().getResource("/components/SourcePlatforms/SourcePlatforms.fxml"));
             SourcePlatforms = new Stage();
             SourcePlatforms.setScene(new Scene(rootPlatforms));
 

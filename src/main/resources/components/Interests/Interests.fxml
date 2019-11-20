@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?scenebuilder-stylesheet ../styles/singIn.css?>
 
-<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ftt.app.infra.controllers.SourcePlatforms">
+
+<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" visible="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftt.app.controllers.Interests">
   <children>
     <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <bottom>
-        <FlowPane alignment="CENTER" columnHalignment="LEFT" hgap="15.0" prefHeight="52.0" prefWidth="600.0">
+        <FlowPane alignment="CENTER" columnHalignment="LEFT" hgap="15.0" prefHeight="54.0" prefWidth="600.0">
           <children>
-            <Button fx:id="btnBack" minWidth="70.0" mnemonicParsing="false" onAction="#backToInterests" styleClass="btnDefault" text="Back" />
-            <Button fx:id="btnClear" minWidth="70.0" mnemonicParsing="false" onAction="#clearPlatformsSelected" styleClass="btnDefault" text="Clear" />
-            <Button fx:id="btnContinue" minWidth="70.0" mnemonicParsing="false" onAction="#finishRegistration" styleClass="btnDefault" text="Continue" />
+            <Button fx:id="btnBack" minWidth="70.0" mnemonicParsing="false" onAction="#BackToRegistration" styleClass="btnDefault" text="Back" />
+            <Button fx:id="btnClear" minWidth="70.0" mnemonicParsing="false" onAction="#ClearInterest" styleClass="btnDefault" text="Clear" />
+            <Button fx:id="btnContinue" minWidth="70.0" mnemonicParsing="false" onAction="#ContinueToNewsPlataforms" styleClass="btnDefault" text="Continue" />
           </children>
         </FlowPane>
       </bottom>
@@ -30,7 +35,7 @@
                   <children>
                     <FlowPane alignment="CENTER_LEFT" maxWidth="-1.0" prefHeight="48.0" prefWidth="194.0" VBox.vgrow="ALWAYS">
                       <children>
-                        <CheckBox fx:id="chkBBC" mnemonicParsing="false" prefHeight="21.000091552734375" text="BBC">
+                        <CheckBox fx:id="chkInvestment" mnemonicParsing="false" onAction="#toggleInterest" prefHeight="21.000091552734375" selected="false" styleClass="interest-checkbox" text="Investment">
                           <FlowPane.margin>
                             <Insets left="50.0" fx:id="x1" />
                           </FlowPane.margin>
@@ -42,17 +47,17 @@
                     </FlowPane>
                     <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
                       <children>
-                        <CheckBox fx:id="chkG1" mnemonicParsing="false" prefHeight="21.000091552734375" text="G1" FlowPane.margin="$x1" />
+                        <CheckBox fx:id="chkEconomy" mnemonicParsing="false" onAction="#toggleInterest" prefHeight="21.000091552734375" text="Economy" FlowPane.margin="$x1" />
                       </children>
                     </FlowPane>
                     <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
                       <children>
-                        <CheckBox fx:id="chkGazeta" mnemonicParsing="false" prefHeight="21.000091552734375" text="Gazeta" FlowPane.margin="$x1" />
+                        <CheckBox fx:id="chkTravel" mnemonicParsing="false" onAction="#toggleInterest" prefHeight="21.000091552734375" text="Travel" FlowPane.margin="$x1" />
                       </children>
                     </FlowPane>
                     <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
                       <children>
-                        <CheckBox fx:id="chkMedium" mnemonicParsing="false" prefHeight="21.000091552734375" text="Medium">
+                        <CheckBox fx:id="chkTechnology" mnemonicParsing="false" onAction="#toggleInterest" prefHeight="21.000091552734375" text="Technology">
                           <FlowPane.margin>
                             <Insets left="50.0" fx:id="x1" />
                           </FlowPane.margin>
@@ -61,7 +66,7 @@
                     </FlowPane>
                     <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
                       <children>
-                        <CheckBox fx:id="chkFolha" mnemonicParsing="false" prefHeight="21.000091552734375" text="Folha">
+                        <CheckBox fx:id="chkInnovation" mnemonicParsing="false" onAction="#toggleInterest" prefHeight="21.000091552734375" text="Innovation">
                           <FlowPane.margin>
                             <Insets left="50.0" fx:id="x1" />
                           </FlowPane.margin>
@@ -70,7 +75,7 @@
                     </FlowPane>
                     <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
                       <children>
-                        <CheckBox fx:id="chkStartSe" mnemonicParsing="false" prefHeight="21.000091552734375" text="StartSe">
+                        <CheckBox fx:id="chkWorld" mnemonicParsing="false" onAction="#toggleInterest" prefHeight="21.000091552734375" text="World">
                           <FlowPane.margin>
                             <Insets left="50.0" fx:id="x1" />
                           </FlowPane.margin>
@@ -83,7 +88,7 @@
                   <children>
                     <FlowPane alignment="CENTER_LEFT" maxWidth="-1.0" prefHeight="48.0" prefWidth="194.0" VBox.vgrow="ALWAYS">
                       <children>
-                        <CheckBox fx:id="chkAbril" mnemonicParsing="false" prefHeight="21.000091552734375" text="Abril">
+                        <CheckBox fx:id="chkSport" mnemonicParsing="false" onAction="#toggleInterest" prefHeight="21.000091552734375" text="Sport">
                           <FlowPane.margin>
                             <Insets left="50.0" fx:id="x1" />
                           </FlowPane.margin>
@@ -95,7 +100,7 @@
                     </FlowPane>
                     <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
                       <children>
-                        <CheckBox fx:id="chkDZone" mnemonicParsing="false" prefHeight="21.000091552734375" text="DZone">
+                        <CheckBox fx:id="chkScience" mnemonicParsing="false" onAction="#toggleInterest" prefHeight="21.000091552734375" text="Science">
                           <FlowPane.margin>
                             <Insets left="50.0" fx:id="x1" />
                           </FlowPane.margin>
@@ -104,7 +109,7 @@
                     </FlowPane>
                     <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
                       <children>
-                        <CheckBox fx:id="chkExame" mnemonicParsing="false" prefHeight="21.000091552734375" text="Exame">
+                        <CheckBox fx:id="chkPolitics" mnemonicParsing="false" onAction="#toggleInterest" prefHeight="21.000091552734375" text="Politics">
                           <FlowPane.margin>
                             <Insets left="50.0" fx:id="x1" />
                           </FlowPane.margin>
@@ -113,7 +118,7 @@
                     </FlowPane>
                     <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
                       <children>
-                        <CheckBox fx:id="chkVeja" mnemonicParsing="false" prefHeight="21.000091552734375" text="Veja">
+                        <CheckBox fx:id="chkNature" mnemonicParsing="false" onAction="#toggleInterest" prefHeight="21.000091552734375" text="Nature">
                           <FlowPane.margin>
                             <Insets left="50.0" fx:id="x1" />
                           </FlowPane.margin>
@@ -122,7 +127,7 @@
                     </FlowPane>
                     <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
                       <children>
-                        <CheckBox fx:id="chkR7" mnemonicParsing="false" prefHeight="21.000091552734375" text="R7">
+                        <CheckBox fx:id="chkPop" mnemonicParsing="false" onAction="#toggleInterest" prefHeight="21.000091552734375" text="Pop">
                           <FlowPane.margin>
                             <Insets left="50.0" fx:id="x1" />
                           </FlowPane.margin>
@@ -131,7 +136,7 @@
                     </FlowPane>
                     <FlowPane alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
                       <children>
-                        <CheckBox fx:id="chkInfoQ" mnemonicParsing="false" prefHeight="21.000091552734375" text="InfoQ">
+                        <CheckBox fx:id="chkCreativity" mnemonicParsing="false" onAction="#toggleInterest" prefHeight="21.000091552734375" text="Creativity">
                           <FlowPane.margin>
                             <Insets left="50.0" fx:id="x1" />
                           </FlowPane.margin>
@@ -148,7 +153,7 @@
       <top>
         <FlowPane alignment="CENTER" prefHeight="66.0" prefWidth="600.0" BorderPane.alignment="CENTER">
           <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="194.0" text="Source Platforms" FlowPane.margin="$x2">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="194.0" text="Interests" FlowPane.margin="$x2">
               <font>
                 <Font name="Century Gothic" size="20.0" />
               </font>
@@ -158,4 +163,8 @@
       </top>
     </BorderPane>
   </children>
+   <stylesheets>
+      <URL value="@interests.css" />
+      <URL value="@interests.css" />
+   </stylesheets>
 </AnchorPane>
