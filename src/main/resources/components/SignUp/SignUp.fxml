@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane disable="false" minHeight="400.0" minWidth="300.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@sign-up.css" visible="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftt.app.controllers.SignUp">
+<AnchorPane disable="false" minHeight="400.0" minWidth="300.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@sign-up.css" visible="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftt.app.infra.controllers.SignUp">
   <children>
     <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>

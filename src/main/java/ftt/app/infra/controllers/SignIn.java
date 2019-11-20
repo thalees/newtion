@@ -15,6 +15,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 
 import java.net.URL;
@@ -22,6 +23,9 @@ import java.util.ResourceBundle;
 
 @Controller
 public class SignIn {
+
+	@Autowired
+	private ApplicationContext springContext;
 
 	@FXML
 	private ResourceBundle resources;
@@ -69,10 +73,13 @@ public class SignIn {
 			currentStage.hide();
 			Main.SignUp.show();
 
-			  Parent root = FXMLLoader.load(getClass().getResource("/components/SingUp.fxml"));
-			  Stage stage = new Stage(); stage.setScene(new Scene(root));
-			  stage.setTitle("Newtion - A new way to find relevant information.");
-			  stage.show();
+			FXMLLoader singUpLoader = new FXMLLoader(getClass().getResource("/components/SignUp/SignUp.fxml"));
+			singUpLoader.setControllerFactory(springContext::getBean);
+			Parent root = singUpLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.setTitle("Newtion - A new way to find relevant information.");
+			stage.show();
 
 		} catch (Exception e) {
 			e.printStackTrace();

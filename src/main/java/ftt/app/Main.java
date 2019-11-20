@@ -45,7 +45,7 @@ public class Main extends Application {
         try {
             currentUser = new User();
 
-            FXMLLoader singUpLoader = new FXMLLoader(getClass().getResource("/components/SignUp.fxml"));
+            FXMLLoader singUpLoader = new FXMLLoader(getClass().getResource("/components/SignUp/SignUp.fxml"));
             singUpLoader.setControllerFactory(springContext::getBean);
             Parent rootSingUp = singUpLoader.load();
             SignUp = new Stage();
