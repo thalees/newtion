@@ -11,7 +11,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: newtion
     volumes:
-      - db:/var/lib/newtion_postgres
+      - db-data:/var/lib/postgresql/data
 
   newtion:
     build:
@@ -26,4 +26,4 @@ services:
       - "DATABASE_URL=jdbc:postgresql://db:5432/newtion?user=postgres"
 
 volumes:
-  db:
+  db-data:
