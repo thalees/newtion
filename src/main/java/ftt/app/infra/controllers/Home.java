@@ -7,6 +7,7 @@ import ftt.app.domain.model.DataResponse;
 import ftt.app.domain.model.News;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.event.EventDispatchChain;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,6 +29,8 @@ import java.util.ResourceBundle;
 
 @Controller
 public class Home {
+    JSONObject data;
+
     @Autowired
     private ApplicationContext springContext;
 
@@ -92,9 +95,6 @@ public class Home {
     private Pane panelImage6;
 
     @FXML
-    private Button btnImgOpenNewsBody;
-
-    @FXML
     private Button btnSearch;
 
     @FXML
@@ -107,10 +107,19 @@ public class Home {
     @FXML
     void openNewsContent(Event event) {
     	try {
-			Stage currentStage = (Stage) btnImgOpenNewsBody.getScene().getWindow();
+			Stage currentStage = (Stage) panelImage1.getScene().getWindow();
 			currentStage.hide();
-			Main.NewsContent.show();
-			 
+
+            FXMLLoader newsContentLoader = new FXMLLoader(getClass().getResource("/components/NewsContent.fxml"));
+            newsContentLoader.setControllerFactory(springContext::getBean);
+            Parent root = newsContentLoader.load();
+            NewsContent controller = newsContentLoader.<NewsContent>getController();
+            controller.setNewsToRead(data, getIndex(event.getSource().toString()));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            Main.NewsContent = stage;
+
+            stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 			StandartController.showAlert(">>> Error: ", e.getMessage(), AlertType.ERROR);
@@ -155,7 +164,6 @@ public class Home {
 
     @FXML
     void initialize() {
-        assert btnImgOpenNewsBody != null : "fx:id=\"btnImgOpenNewsBody\" was not injected: check your FXML file 'Home.fxml'.";
         assert btnSearch != null : "fx:id=\"btnSearch\" was not injected: check your FXML file 'Home.fxml'.";
         assert btnMenu != null : "fx:id=\"btnMenu\" was not injected: check your FXML file 'Home.fxml'.";
         assert txtSearch != null : "fx:id=\"txtSearch\" was not injected: check your FXML file 'Home.fxml'.";
@@ -165,10 +173,14 @@ public class Home {
 
     private JSONObject searchNews(String text) throws Exception {
         DataFacade dataFacade = new DataFacade();
-        return dataFacade.searchNewsByText(text);
+        data = dataFacade.searchNewsByText(text);
+
+        return data;
     }
 
     public void setNews(JSONObject newsObject) throws JSONException {
+        data = newsObject;
+
         Pane[] panes = buildPanes();
         Label[] titles = buildTitles();
         Label[] descriptions = buildDescriptions();
@@ -188,6 +200,10 @@ public class Home {
             );
         }
 
+    }
+
+    private int getIndex(String className){
+        return Integer.parseInt((className.substring(className.length() - 2, className.length() - 1) ).trim()) - 1;
     }
 
     private Label[] buildTitles(){
