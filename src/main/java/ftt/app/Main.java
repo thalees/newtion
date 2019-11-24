@@ -61,13 +61,17 @@ public class Main extends Application {
             SignIn.setScene(new Scene(rootSingIn));
 
             /* Interests */
-            Parent rootInterests = FXMLLoader.load(getClass().getResource("/components/Interests/Interests.fxml"));
+            FXMLLoader interestsLoader = new FXMLLoader(getClass().getResource("/components/Interests/Interests.fxml"));
+            interestsLoader.setControllerFactory(springContext::getBean);
+            Parent rootInterests = interestsLoader.load();
             Interests = new Stage();
             Interests.setTitle("Newtion - A new way to find relevant information.");
             Interests.setScene(new Scene(rootInterests));
 
             /* Home */
-            Parent rootHome = FXMLLoader.load(getClass().getResource("/components/Home/Home.fxml"));
+            FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/components/Home/Home.fxml"));
+            homeLoader.setControllerFactory(springContext::getBean);
+            Parent rootHome = homeLoader.load();
             Home = new Stage();
             Home.setScene(new Scene(rootHome));
 

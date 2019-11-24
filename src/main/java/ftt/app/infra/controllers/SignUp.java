@@ -128,7 +128,6 @@ public class SignUp {
 		assert txtEmail != null : "fx:id=\"txtEmail\" was not injected: check your FXML file 'SignUp.fxml'.";
 		assert txtPassword != null : "fx:id=\"txtPassword\" was not injected: check your FXML file 'SignUp.fxml'.";
 		assert txtUsername != null : "fx:id=\"txtUsername\" was not injected: check your FXML file 'SignUp.fxml'.";
-
 	}
 
 	private void saveUser(User user){

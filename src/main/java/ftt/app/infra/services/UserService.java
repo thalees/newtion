@@ -22,6 +22,15 @@ public class UserService {
         }
     }
 
+    @Transactional
+    public void update(User user){
+        try {
+            userRepository.saveAndFlush(user);
+        } catch (DataIntegrityViolationException ex) {
+            throw ex;
+        }
+    }
+
     public User find(String nickname, String password){
         return userRepository.findByNicknameAndPassword(nickname, password);
     }

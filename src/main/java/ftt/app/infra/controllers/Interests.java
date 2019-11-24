@@ -2,20 +2,24 @@ package ftt.app.infra.controllers;
 
 import ftt.app.Main;
 import ftt.app.domain.model.Interest;
+import ftt.app.infra.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.ResourceBundle;
+import java.util.*;
 
+@Controller
 public class Interests {
+
+	@Autowired
+	private UserService userService;
 
 	private HashSet<CheckBox> chks;
 
@@ -96,8 +100,8 @@ public class Interests {
 		return false;
 	}
 
-	private ArrayList<Interest> getInterests() {
-		ArrayList<Interest> selectedInterests = new ArrayList<Interest>();
+	private Collection<Interest> getInterests() {
+		Collection<Interest> selectedInterests = new ArrayList<Interest>();
 		for (CheckBox chk : chks) {
 			if (chk != null && chk.isSelected()) {
 				String interest = chk.getId().replace("chk", "");
@@ -113,7 +117,9 @@ public class Interests {
 		try {
 			if (validateInterests()) {
 				Stage currentStage = (Stage) btnClear.getScene().getWindow();
-//				Main.currentUser.setInterests(this.getInterests());
+				Main.currentUser.setInterests(this.getInterests());
+				userService.update(Main.currentUser);
+
 				currentStage.hide();
 				Main.SourcePlatforms.show();
 			} else {

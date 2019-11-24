@@ -1,10 +1,8 @@
 package ftt.app.domain.model;
 
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import javax.persistence.*;
 
 @Entity
@@ -17,7 +15,8 @@ public class User {
     private String nickname;
     private String email;
     private String password;
-//    private ArrayList<Interest> interests;
+    @OneToMany(mappedBy = "user")
+    private Collection<Interest> interests;
 //    private ArrayList<Platform> platforms;
 
     public User() {
@@ -25,14 +24,12 @@ public class User {
         this.nickname = "";
         this.email = "";
         this.password = "";
-//        this.interests = new ArrayList<Interest>();
     }
 
     public User(String nickname, String email, String password) {
         this.nickname = nickname;
         this.email = email;
         this.password = password;
-//        this.interests = new ArrayList<Interest>();
     }
 
     public int getId() { return id; }
@@ -58,27 +55,26 @@ public class User {
         this.password = password;
     }
 
-    /* ----------------- interests ----------------- */
-//    public Collection<Interest> getInterests() {
-//        return Collections.unmodifiableCollection(this.interests);
-//    }
-//
-//    public void addInterest(Interest interest) {
-//        this.interests.add(interest);
-//    }
-//
-//    public void removeInterest(Interest interest) {
-//        for (int idx = 0; idx < this.interests.size(); idx++) {
-//            if(this.interests.get(idx) == interest) {
-//                this.interests.remove(idx);
-//            }
-//        }
-//    }
-//
-//    public void setInterests(ArrayList<Interest> interests) {
-//        this.interests = interests;
-//    }
-//
+    public Collection<Interest> getInterests() {
+        return Collections.unmodifiableCollection(this.interests);
+    }
+
+    public void addInterest(Interest interest) {
+        this.interests.add(interest);
+    }
+
+    public void removeInterest(Interest interest) {
+        for (int idx = 0; idx < this.interests.size(); idx++) {
+            if(this.interests.contains(interest)) {
+                this.interests.remove(idx);
+            }
+        }
+    }
+
+    public void setInterests(Collection<Interest> interests) {
+        this.interests = interests;
+    }
+
 //    /* ----------------- platforms ----------------- */
 //    public Collection<Interest> getPlatforms() {
 //        return Collections.unmodifiableCollection(this.interests);
