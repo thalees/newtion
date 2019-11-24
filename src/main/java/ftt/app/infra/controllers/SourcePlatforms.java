@@ -144,7 +144,7 @@ public class SourcePlatforms {
             controller.setNews(loadNews(Main.currentUser));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
-            stage.setTitle("Newtion - A new way to find relevant information.");
+            Main.Home = stage;
             stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
