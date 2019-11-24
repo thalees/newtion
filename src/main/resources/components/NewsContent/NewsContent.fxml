@@ -10,7 +10,7 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-stylesheet ../styles/singIn.css?>
 
-<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ftt.app.infra.controllers.NewsContent">
+<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" visible="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftt.app.infra.controllers.NewsContent">
   <children>
     <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <center>
@@ -63,26 +63,16 @@
               <center>
                 <FlowPane minHeight="1076.0" minWidth="435.0" prefHeight="1076.0" prefWidth="453.0" BorderPane.alignment="CENTER">
                   <children>
-                    <Label prefWidth="500.0" text="Title 01">
+                    <Label fx:id="txtTitle" prefWidth="500.0" text="Title 01">
                       <font>
                         <Font name="System Bold" size="20.0" />
                       </font>
                     </Label>
-                    <Label minHeight="-1.0" prefHeight="130.0" prefWidth="453.0" text="Skate ipsum dolor sit amet, griptape egg plant kidney hand rail aerial rails method air. Coper freestyle hand rail Powell Peralta launch ramp smith grind g-turn kickturn. Salad grind backside airwalk pool front foot impossible skate key hurricane Kevin Staab. 50-50 shinner Supersonic Skate Camp baseplate stoked nose bump nose-bump." wrapText="true">
+                    <Label fx:id="txtContent" minHeight="-1.0" prefHeight="130.0" prefWidth="453.0" text="Skate ipsum dolor sit amet, griptape egg plant kidney hand rail aerial rails method air. Coper freestyle hand rail Powell Peralta launch ramp smith grind g-turn kickturn. Salad grind backside airwalk pool front foot impossible skate key hurricane Kevin Staab. 50-50 shinner Supersonic Skate Camp baseplate stoked nose bump nose-bump." wrapText="true">
                       <font>
                         <Font size="16.0" fx:id="x2" />
                       </font>
                     </Label>
-                    <Label font="$x2" minHeight="100.0" prefHeight="100.0" prefWidth="453.0" text=" Transfer nose slide powerslide gnarly spine nosepicker noseblunt slide Vans. Late cab flip ollie hole downhill layback Randy Colvin nollie durometer. Skate key noseblunt slide nose-bump soul skate aerial." underline="false" wrapText="true" />
-                    <Label font="$x1" text="[Img 01]" />
-                    <FlowPane alignment="CENTER" minHeight="100.0" minWidth="89.0" prefHeight="135.0" prefWidth="418.0" style="-fx-background-color: darkgray;" />
-                    <Label font="$x2" minHeight="100.0" prefHeight="100.0" prefWidth="465.0" text=" Tailslide crailtap Japan air gnarly kingpin bruised heel crail slide. Hanger locals 180 Daewon Song judo air acid drop opposite footed skate key. Air locals bruised heel skater downhill rip grip Danny Way pump. Birdie pump tailslide bluntslide 720 handplant spine." wrapText="true" />
-                    <Label font="$x2" minHeight="100.0" prefHeight="100.0" prefWidth="473.0" text="Bluntslide Rob Welsh frontside concave wall ride pogo Japan air. Full-cab rock and roll 50-50 bluntslide Ray Underhill frontside hang up. Skate or die flypaper betty indy grab manual deck. Hang ten no comply ledge lipslide Primo slide layback. " wrapText="true" />
-                    <Label font="$x2" minHeight="100.0" prefHeight="100.0" prefWidth="473.0" text="Full pipe bearings stoked 720 hurricane crail grab. Nosepicker smith grind fakie sick finger flip pressure flip. Gap lipslide snake pump hardware cess slide." wrapText="true" />
-                    <Label font="$x1" text="[Img 02]" />
-                    <FlowPane alignment="CENTER" minHeight="200.0" minWidth="89.0" prefHeight="135.0" prefWidth="418.0" style="-fx-background-color: darkgray;" />
-                    <Label font="$x2" minHeight="100.0" prefHeight="100.0" prefWidth="473.0" text="Disaster axle pump kickturn skate or die flail. Aerial shinner feeble Rick Howard backside 50-50 darkslide. Disaster axle pump kickturn skate or die flail. Aerial shinner feeble Rick Howard backside 50-50 darkslide." wrapText="true" />
-                    <Label font="$x2" minHeight="100.0" prefHeight="100.0" prefWidth="465.0" text="Girl blunt invert kidney skater. Darkslide hand rail kidney bruised heel Sacto. Nose grab slappy sketchy pogo. Spine coffin handplant bail. Jason Lee Tracker poseur coping trucks." textAlignment="LEFT" wrapText="true" />
                   </children>
                 </FlowPane>
               </center>
@@ -112,11 +102,7 @@
                 </FlowPane>
               </right>
               <top>
-                <FlowPane alignment="CENTER" prefHeight="118.0" prefWidth="598.0" style="-fx-background-color: darkgray;" BorderPane.alignment="CENTER">
-                  <children>
-                    <Label font="$x1" text="[News main image]" />
-                  </children>
-                </FlowPane>
+                <FlowPane fx:id="BannerImage" alignment="CENTER" prefHeight="118.0" prefWidth="598.0" style="-fx-background-color: darkgray;" BorderPane.alignment="CENTER" />
               </top>
             </BorderPane>
           </content>
