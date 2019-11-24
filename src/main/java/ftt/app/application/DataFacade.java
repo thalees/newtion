@@ -1,21 +1,26 @@
 package ftt.app.application;
 
-import ftt.app.infra.clients.NewsClient;
-import org.springframework.stereotype.Service;
+import ftt.app.application.helpers.HttpRequest;
+import org.json.JSONObject;
 
-@Service
-public class DataFacade  {
-    private NewsClient client;
+import java.util.ArrayList;
 
-    public DataFacade() {
-        this.client = new NewsClient();
+public class DataFacade {
+    private HttpRequest request = new HttpRequest();
+    private ArrayList<Object[]> parameters = new ArrayList<>();
+
+    public JSONObject getAllNews(String category) throws Exception {
+//        parameters = new ArrayList<>();
+//        parameters.add(new String[] {"category", String.valueOf(category)});
+        return request.sendGet(
+            "/top-headlines?country=br&category=business",
+            parameters
+        );
     }
 
-    public String getNewsInformation(){
-        try {
-            return client.getNews();
-        } catch (Exception e) {
-            return e.toString();
-        }
+    public JSONObject searchNewsByText(String searchWord) throws Exception {
+        return request.sendGet(
+                "/everything?q=" + searchWord,
+                parameters);
     }
 }

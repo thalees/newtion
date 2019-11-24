@@ -1,23 +1,37 @@
 package ftt.app.infra.controllers;
 
 import ftt.app.Main;
+import ftt.app.application.DataFacade;
+import ftt.app.domain.model.Interest;
 import ftt.app.domain.model.Platform;
+import ftt.app.domain.model.User;
+import ftt.app.infra.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Controller;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.ResourceBundle;
+import java.util.*;
 
-
+@Controller
 public class SourcePlatforms {
 	private HashSet<CheckBox> chks;
+
+    @Autowired
+    private ApplicationContext springContext;
+
+    @Autowired
+    private UserService userService;
 	
     @FXML
     private ResourceBundle resources;
@@ -122,7 +136,16 @@ public class SourcePlatforms {
 			}
 			Stage currentStage = (Stage) btnClear.getScene().getWindow();
 			currentStage.hide();
-			Main.Home.show();
+
+            FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/components/Home/Home.fxml"));
+            homeLoader.setControllerFactory(springContext::getBean);
+            Parent root = homeLoader.load();
+            Home controller = homeLoader.<Home>getController();
+            controller.setNews(loadNews(Main.currentUser));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Newtion - A new way to find relevant information.");
+            stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 			StandartController.showAlert(">>> Error", e.getMessage(), AlertType.ERROR);
@@ -162,7 +185,12 @@ public class SourcePlatforms {
         assert chkR7 != null : "fx:id=\"chkR7\" was not injected: check your FXML file 'SourcePlatforms.fxml'.";
         assert chkStartSe != null : "fx:id=\"chkStartSe\" was not injected: check your FXML file 'SourcePlatforms.fxml'.";
         assert chkVeja != null : "fx:id=\"chkVeja\" was not injected: check your FXML file 'SourcePlatforms.fxml'.";
+    }
 
-
+    private JSONObject loadNews(User user) throws Exception {
+        DataFacade dataFacade = new DataFacade();
+        Collection<Interest> interests = user.getInterests();
+//		String interest = interests.toArray(new Interest[interests.size()])[0].getDescription();
+        return dataFacade.getAllNews("business");
     }
 }

@@ -61,29 +61,39 @@ public class Main extends Application {
             SignIn.setScene(new Scene(rootSingIn));
 
             /* Interests */
-            Parent rootInterests = FXMLLoader.load(getClass().getResource("/components/Interests/Interests.fxml"));
+            FXMLLoader interestsLoader = new FXMLLoader(getClass().getResource("/components/Interests/Interests.fxml"));
+            interestsLoader.setControllerFactory(springContext::getBean);
+            Parent rootInterests = interestsLoader.load();
             Interests = new Stage();
             Interests.setTitle("Newtion - A new way to find relevant information.");
             Interests.setScene(new Scene(rootInterests));
 
             /* Home */
-            Parent rootHome = FXMLLoader.load(getClass().getResource("/components/Home/Home.fxml"));
+            FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/components/Home/Home.fxml"));
+            homeLoader.setControllerFactory(springContext::getBean);
+            Parent rootHome = homeLoader.load();
             Home = new Stage();
             Home.setScene(new Scene(rootHome));
 
             /* Source Platforms */
-            Parent rootPlatforms = FXMLLoader.load(getClass().getResource("/components/SourcePlatforms/SourcePlatforms.fxml"));
+            FXMLLoader platformsLoader = new FXMLLoader(getClass().getResource("/components/SourcePlatforms/SourcePlatforms.fxml"));
+            platformsLoader.setControllerFactory(springContext::getBean);
+            Parent rootPlatforms = platformsLoader.load();
             SourcePlatforms = new Stage();
             SourcePlatforms.setScene(new Scene(rootPlatforms));
 
             /* News content */
-            Parent rootNewsContent = FXMLLoader.load(getClass().getResource("/components/NewsContent.fxml"));
+
+            FXMLLoader newsContentLoader = new FXMLLoader(getClass().getResource("/components/NewsContent.fxml"));
+            newsContentLoader.setControllerFactory(springContext::getBean);
+            Parent rootNewsContent = newsContentLoader.load();
             NewsContent = new Stage();
             NewsContent.setScene(new Scene(rootNewsContent));
 
             /* Profile and Settings */
-            Parent rootProfileAndSettings = FXMLLoader
-                    .load(getClass().getResource("/components/ProfileAndSettings.fxml"));
+            FXMLLoader profileAndSettingsLoader = new FXMLLoader(getClass().getResource("/components/ProfileAndSettings.fxml"));
+            profileAndSettingsLoader.setControllerFactory(springContext::getBean);
+            Parent rootProfileAndSettings = profileAndSettingsLoader.load();
             ProfileAndSettings = new Stage();
             ProfileAndSettings.setScene(new Scene(rootProfileAndSettings));
 
