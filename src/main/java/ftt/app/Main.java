@@ -84,7 +84,7 @@ public class Main extends Application {
 
             /* News content */
 
-            FXMLLoader newsContentLoader = new FXMLLoader(getClass().getResource("/components/NewsContent.fxml"));
+            FXMLLoader newsContentLoader = new FXMLLoader(getClass().getResource("/components/NewsContent/NewsContent.fxml"));
             newsContentLoader.setControllerFactory(springContext::getBean);
             Parent rootNewsContent = newsContentLoader.load();
             NewsContent = new Stage();

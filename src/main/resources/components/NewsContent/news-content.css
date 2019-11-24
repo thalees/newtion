@@ -1,0 +1,12 @@
+.root {
+    -fx-background-color: black;
+}
+
+.label {
+    -fx-text-fill: white;
+    -fx-background-color: black;
+}
+
+.button-stars {
+    -fx-background-image: url(../../static/stars-24px.svg);
+}
