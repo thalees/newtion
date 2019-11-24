@@ -91,7 +91,7 @@ public class Main extends Application {
             NewsContent.setScene(new Scene(rootNewsContent));
 
             /* Profile and Settings */
-            FXMLLoader profileAndSettingsLoader = new FXMLLoader(getClass().getResource("/components/ProfileAndSettings.fxml"));
+            FXMLLoader profileAndSettingsLoader = new FXMLLoader(getClass().getResource("/components/ProfileAndSettings/ProfileAndSettings.fxml"));
             profileAndSettingsLoader.setControllerFactory(springContext::getBean);
             Parent rootProfileAndSettings = profileAndSettingsLoader.load();
             ProfileAndSettings = new Stage();
