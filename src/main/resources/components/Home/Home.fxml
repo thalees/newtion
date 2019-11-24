@@ -78,15 +78,8 @@
                 <Label fx:id="newsDescription4" layoutY="617.0" prefHeight="37.0" prefWidth="288.0" text=" Si num tem leite então bota uma pinga aí cumpadi! Interagi no mé, cursus quis, vehicula ac nisi. Não sou faixa preta cumpadi, sou preto inteiris, inteiri" wrapText="true" AnchorPane.rightAnchor="22.0" />
                 <Pane fx:id="panelImage4" layoutY="449.0" prefHeight="146.0" prefWidth="288.0" style="-fx-background-color:gray" AnchorPane.rightAnchor="23.0" />
                 <Label fx:id="newsTitle4" font="$x1" layoutY="601.0" prefWidth="285.0" text=" Sapien in monti palavris qui num significa nadis i pareci latim." AnchorPane.rightAnchor="26.0" />
-                <FlowPane alignment="CENTER" layoutX="40.0" layoutY="-9.0" prefHeight="96.0" prefWidth="542.0" styleClass="news-panel" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
-                  <children>
-                    <TextField id="txtSearchField" fx:id="txtSearch" alignment="CENTER" prefHeight="26.0" prefWidth="266.0" />
-                    <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#search" pickOnBounds="false" prefHeight="26.0" prefWidth="87.0" text="Search" textAlignment="RIGHT">
-                                 <FlowPane.margin>
-                                    <Insets left="15.0" />
-                                 </FlowPane.margin></Button>
-                  </children>
-                </FlowPane>
+              <Button fx:id="btnSearch" layoutX="410.0" layoutY="29.0" mnemonicParsing="false" onAction="#search" pickOnBounds="false" prefHeight="26.0" prefWidth="87.0" text="Search" textAlignment="RIGHT" />
+                        <TextField fx:id="txtSearch" layoutX="82.0" layoutY="29.0" prefHeight="25.0" prefWidth="314.0" />
               </children>
               <padding>
                 <Insets left="20.0" right="20.0" />

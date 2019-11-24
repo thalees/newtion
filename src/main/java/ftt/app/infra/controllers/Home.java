@@ -2,11 +2,15 @@ package ftt.app.infra.controllers;
 
 import com.google.gson.Gson;
 import ftt.app.Main;
+import ftt.app.application.DataFacade;
 import ftt.app.domain.model.DataResponse;
 import ftt.app.domain.model.News;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,15 +19,17 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
-
-import javax.swing.text.LabelView;
 import java.net.URL;
 import java.util.Collection;
 import java.util.ResourceBundle;
 
 @Controller
 public class Home {
+    @Autowired
+    private ApplicationContext springContext;
 
     @FXML
     private ResourceBundle resources;
@@ -113,12 +119,21 @@ public class Home {
 
     @FXML
     void search(ActionEvent event) {
+        String text = txtSearch.getText();
     	try {
-			Stage currentStage = (Stage) txtSearch.getScene().getWindow();
+            Stage currentStage = (Stage) txtSearch.getScene().getWindow();
 			currentStage.hide();
-			txtSearch.setText("");
-			Main.Home.show();		
-			 
+
+            FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/components/Home/Home.fxml"));
+            homeLoader.setControllerFactory(springContext::getBean);
+            Parent root = homeLoader.load();
+            Home controller = homeLoader.<Home>getController();
+            controller.setNews(searchNews(text));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            Main.Home = stage;
+
+			stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 			StandartController.showAlert(">>> Error: ", e.getMessage(), AlertType.ERROR);
@@ -146,6 +161,11 @@ public class Home {
         assert txtSearch != null : "fx:id=\"txtSearch\" was not injected: check your FXML file 'Home.fxml'.";
         assert newsTitle1 != null : "fx:id=\"newsTitle\" was not injected: check your FXML file 'SingIn.fxml'.";
         assert newsDescription1 != null : "fx:id=\"newsDescription\" was not injected: check your FXML file 'SingIn.fxml'.";
+    }
+
+    private JSONObject searchNews(String text) throws Exception {
+        DataFacade dataFacade = new DataFacade();
+        return dataFacade.searchNewsByText(text);
     }
 
     public void setNews(JSONObject newsObject) throws JSONException {

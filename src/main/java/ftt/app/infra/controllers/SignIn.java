@@ -67,7 +67,7 @@ public class SignIn {
 				controller.setNews(loadNews(current));
 				Stage stage = new Stage();
 				stage.setScene(new Scene(root));
-				stage.setTitle("Newtion - A new way to find relevant information.");
+				Main.Home = stage;
 				stage.show();
 			} else {
 				StandartController.showAlert(">>> Error", "User or password incorrect", AlertType.ERROR);
