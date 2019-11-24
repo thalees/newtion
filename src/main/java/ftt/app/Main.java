@@ -76,18 +76,24 @@ public class Main extends Application {
             Home.setScene(new Scene(rootHome));
 
             /* Source Platforms */
-            Parent rootPlatforms = FXMLLoader.load(getClass().getResource("/components/SourcePlatforms/SourcePlatforms.fxml"));
+            FXMLLoader platformsLoader = new FXMLLoader(getClass().getResource("/components/SourcePlatforms/SourcePlatforms.fxml"));
+            platformsLoader.setControllerFactory(springContext::getBean);
+            Parent rootPlatforms = platformsLoader.load();
             SourcePlatforms = new Stage();
             SourcePlatforms.setScene(new Scene(rootPlatforms));
 
             /* News content */
-            Parent rootNewsContent = FXMLLoader.load(getClass().getResource("/components/NewsContent.fxml"));
+
+            FXMLLoader newsContentLoader = new FXMLLoader(getClass().getResource("/components/NewsContent.fxml"));
+            newsContentLoader.setControllerFactory(springContext::getBean);
+            Parent rootNewsContent = newsContentLoader.load();
             NewsContent = new Stage();
             NewsContent.setScene(new Scene(rootNewsContent));
 
             /* Profile and Settings */
-            Parent rootProfileAndSettings = FXMLLoader
-                    .load(getClass().getResource("/components/ProfileAndSettings.fxml"));
+            FXMLLoader profileAndSettingsLoader = new FXMLLoader(getClass().getResource("/components/ProfileAndSettings.fxml"));
+            profileAndSettingsLoader.setControllerFactory(springContext::getBean);
+            Parent rootProfileAndSettings = profileAndSettingsLoader.load();
             ProfileAndSettings = new Stage();
             ProfileAndSettings.setScene(new Scene(rootProfileAndSettings));
 

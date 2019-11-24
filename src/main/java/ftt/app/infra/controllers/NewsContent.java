@@ -7,11 +7,12 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
+import org.springframework.stereotype.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
+@Controller
 public class NewsContent {
 
     @FXML
