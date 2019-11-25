@@ -84,14 +84,14 @@ public class Main extends Application {
 
             /* News content */
 
-            FXMLLoader newsContentLoader = new FXMLLoader(getClass().getResource("/components/NewsContent.fxml"));
+            FXMLLoader newsContentLoader = new FXMLLoader(getClass().getResource("/components/NewsContent/NewsContent.fxml"));
             newsContentLoader.setControllerFactory(springContext::getBean);
             Parent rootNewsContent = newsContentLoader.load();
             NewsContent = new Stage();
             NewsContent.setScene(new Scene(rootNewsContent));
 
             /* Profile and Settings */
-            FXMLLoader profileAndSettingsLoader = new FXMLLoader(getClass().getResource("/components/ProfileAndSettings.fxml"));
+            FXMLLoader profileAndSettingsLoader = new FXMLLoader(getClass().getResource("/components/ProfileAndSettings/ProfileAndSettings.fxml"));
             profileAndSettingsLoader.setControllerFactory(springContext::getBean);
             Parent rootProfileAndSettings = profileAndSettingsLoader.load();
             ProfileAndSettings = new Stage();

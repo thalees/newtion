@@ -1,29 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.geometry.Point3D?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?scenebuilder-stylesheet ../styles/singIn.css?>
 
-<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="600.0" styleClass="root" stylesheets="@ProfileAndSettings/profile-and-settings.css" visible="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ftt.app.infra.controllers.ProfileAndSettings">
+<AnchorPane disable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="600.0" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ftt.app.infra.controllers.ProfileAndSettings">
   <children>
-    <BorderPane maxHeight="1138.0" minHeight="400.0" prefHeight="597.0" prefWidth="600.0" styleClass="root" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <BorderPane maxHeight="1138.0" minHeight="400.0" prefHeight="597.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <bottom>
         <FlowPane alignment="CENTER" prefHeight="60.0" prefWidth="600.0">
           <children>
@@ -32,9 +20,9 @@
         </FlowPane>
       </bottom>
       <center>
-        <VBox prefHeight="200.0" prefWidth="100.0" styleClass="root">
+        <VBox prefHeight="200.0" prefWidth="100.0">
           <children>
-            <FlowPane alignment="CENTER" prefHeight="56.0" prefWidth="491.0" style="-fx-background-color: black;" styleClass="root">
+            <FlowPane alignment="CENTER" prefHeight="56.0" prefWidth="491.0" style="-fx-background-color: #858585;">
               <children>
                 <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="339.0" text="Profile &amp; Settings" textFill="WHITE">
                   <font>
@@ -46,13 +34,13 @@
                 </Label>
               </children>
             </FlowPane>
-            <TabPane prefHeight="482.0" prefWidth="600.0" side="TOP" style="-fx-background-color: black;" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+            <TabPane prefHeight="482.0" prefWidth="600.0" side="TOP" style="" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
               <tabs>
                 <Tab text="Bookmarks">
                   <content>
                     <ScrollPane pannable="false" prefHeight="200.0" prefWidth="200.0">
                       <content>
-                        <BorderPane prefHeight="411.0" prefWidth="585.0" styleClass="root">
+                        <BorderPane prefHeight="411.0" prefWidth="585.0">
                           <center>
                             <GridPane prefHeight="332.0">
                               <children>
@@ -406,7 +394,7 @@
         </VBox>
       </center>
       <top>
-        <HBox minHeight="25.0" prefHeight="37.0" prefWidth="600.0" styleClass="root">
+        <HBox minHeight="25.0" prefHeight="37.0" prefWidth="600.0">
           <children>
             <FlowPane alignment="CENTER" prefHeight="56.0" prefWidth="491.0" HBox.hgrow="ALWAYS">
               <children>
