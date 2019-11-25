@@ -110,7 +110,7 @@ public class Home {
 			Stage currentStage = (Stage) panelImage1.getScene().getWindow();
 			currentStage.hide();
 
-            FXMLLoader newsContentLoader = new FXMLLoader(getClass().getResource("/components/NewsContent.fxml"));
+            FXMLLoader newsContentLoader = new FXMLLoader(getClass().getResource("/components/NewsContent/NewsContent.fxml"));
             newsContentLoader.setControllerFactory(springContext::getBean);
             Parent root = newsContentLoader.load();
             NewsContent controller = newsContentLoader.<NewsContent>getController();
